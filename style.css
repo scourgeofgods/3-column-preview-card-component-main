@@ -1,0 +1,126 @@
+@import url("https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700&family=Lexend+Deca&display=swap");
+
+:root {
+  font-size: 62.5%;
+  --fw-base: 400;
+  --fw-semibold: 700;
+  --ff-accent: "Big Shoulders Display", cursive;
+  --ff-base: "Lexend Deca", sans-serif;
+  --bright-orange: hsl(31, 77%, 52%);
+  --dark-cyan: hsl(184, 100%, 22%);
+  --very-dark-cyan: hsl(179, 100%, 13%);
+  --para-clr: hsla(0, 0%, 100%, 0.75);
+  --bhb-clr: hsl(0, 0%, 95%);
+}
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-size: 1.6rem;
+  font-family: var(--ff-base);
+  background-color: var(--bhb-clr);
+}
+
+main {
+  display: grid;
+  place-content: center;
+  min-height: 100vh;
+  padding: 2.5rem;
+  background-clip: var(--para-clr);
+}
+.cards {
+  border-radius: 1rem;
+  overflow: hidden;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(32rem, 1fr));
+  max-width: 96rem;
+  margin: 1.6rem;
+}
+.card {
+  padding: 3rem;
+}
+.card__img {
+  margin-bottom: 3rem;
+}
+.sedans {
+  background-color: var(--bright-orange);
+}
+.suvs {
+  background-color: var(--dark-cyan);
+}
+.luxury {
+  background-color: var(--very-dark-cyan);
+}
+
+.card__title {
+  font-family: var(--ff-accent);
+  font-weight: var(--fw-semibold);
+  font-size: 2.5rem;
+  line-height: 1rem;
+  color: var(--bhb-clr);
+  text-transform: uppercase;
+  margin-bottom: 1.5rem;
+}
+.card__details {
+  font-size: 1.5rem;
+  line-height: 1.6em;
+  color: var(--para-clr);
+  font-family: var(--ff-base);
+  margin-bottom: 1.5rem;
+}
+.card__link {
+  border: 1px solid var(--bhb-clr);
+  text-decoration: none;
+  border-radius: 2em;
+  padding: 1rem 2rem;
+  background-color: var(--bhb-clr);
+  color: var(--very-dark-cyan);
+
+  font-weight: var(--fw-base);
+  cursor: pointer;
+  margin: 2rem 0;
+  display: inline-block;
+  transition: all 0.5s ease-in-out;
+}
+.card__link:hover {
+  background-color: transparent;
+  color: var(--bhb-clr);
+}
+@media screen and (min-width: 576px) {
+  .card {
+    position: relative;
+    height: 32rem;
+  }
+
+  .card__link {
+    position: absolute;
+    bottom: 0.5rem;
+  }
+  .luxury {
+    grid-column: 1 / 3;
+  }
+}
+
+@media screen and (min-width: 992px) {
+  .card {
+    position: relative;
+    height: 48rem;
+    padding: 3rem 6rem;
+  }
+  .card__title {
+    font-size: 3.6rem;
+  }
+  .card__details {
+    margin-top: 4rem;
+    line-height: 3.2rem;
+  }
+
+  .luxury {
+    grid-column: 3 / 3;
+  }
+}
